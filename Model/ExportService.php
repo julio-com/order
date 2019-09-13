@@ -1,7 +1,7 @@
 <?php
 namespace Julio\Order\Model;
 use Julio\Order\Model\ResourceModel\Export as ExportResource;
-class ExportService implements ExportServiceInterface {
+class ExportService {
 	/**
 	 * ExportService constructor.
 	 * @param ExportFactory $exportFactory
