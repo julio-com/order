@@ -5,7 +5,7 @@ use Kunnu\Dropbox as DropboxLib;
 use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Framework\Filesystem\Directory\WriteFactory;
 use Magento\Sales\Model\Order;
-class Dropbox implements ApiInterface {
+class Dropbox {
 	const EXPORT_DIR = '/tmp/xml_export';
 
 	/**

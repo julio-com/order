@@ -1,7 +1,7 @@
 <?php
 namespace Julio\Order\Model;
 use Julio\Order\Helper\GeneralHelper;
-use Julio\Order\Model\Api\ApiInterface;
+use Julio\Order\Model\Api\Dropbox;
 use Julio\Order\Model\ResourceModel\Export\Collection;
 use Julio\Order\Model\ResourceModel\Export\CollectionFactory;
 use Magento\Sales\Model\ResourceModel\GridInterface;
@@ -14,7 +14,7 @@ class QueueProcessor {
 	function __construct(
 		CollectionFactory $collectionFactory,
 		LoggerInterface $logger,
-		ApiInterface $api,
+		Dropbox $api,
 		ExportService $exportService,
 		GridInterface $grid,
 		GeneralHelper $generalHelper
@@ -120,7 +120,7 @@ class QueueProcessor {
 
 	/**
 	 * Api
-	 * @return ApiInterface
+	 * @return Dropbox
 	 */
 	protected function getApi() {return $this->api;}
 
@@ -161,7 +161,7 @@ class QueueProcessor {
 	protected $exportService;
 
 	/**
-	 * @var ApiInterface
+	 * @var Dropbox
 	 */
 	protected $api;
 

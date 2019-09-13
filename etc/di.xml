@@ -3,7 +3,6 @@
 	xsi:noNamespaceSchemaLocation='urn:magento:framework:ObjectManager/etc/config.xsd'
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
 >
-	<preference for='Julio\Order\Model\Api\ApiInterface' type='Julio\Order\Model\Api\Dropbox' />
 	<type name='Magento\Framework\Console\CommandListInterface'>
 		<arguments>
 			<argument name='commands' xsi:type='array'>
