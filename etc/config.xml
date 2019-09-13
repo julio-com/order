@@ -1,0 +1,10 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<sales>
+			<orderexport>
+				<queue_active>0</queue_active>
+				<dropbox_dir_path>Pedidos</dropbox_dir_path>
+			</orderexport>
+		</sales>
+	</default>
+</config>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<listing
+	xsi:noNamespaceSchemaLocation='urn:magento:module:Magento_Ui:etc/ui_configuration.xsd'
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+>
+	<columns name='sales_order_columns'>
+		<column component='Magento_Ui/js/grid/columns/select' name='export_synced'>
+			<settings>
+				<filter>select</filter>
+				<options class='Julio\Order\Ui\Component\Source\Options\Export'/>
+				<dataType>select</dataType>
+				<label translate='true'>Export</label>
+				<visible>true</visible>
+			</settings>
+		</column>
+	</columns>
+</listing>

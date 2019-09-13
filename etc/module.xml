@@ -6,6 +6,7 @@
 	<module name='Julio_Order' setup_version='0.0.1'>
 		<sequence>
 			<module name='Julio_Core'/>
+			<module name='Magento_Sales'/>
 		</sequence>
 	</module>
 </config>

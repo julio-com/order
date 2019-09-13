@@ -1,6 +1,6 @@
 {
 	"name": "julio.com/order"
-	,"version": "0.0.1"
+	,"version": "0.0.2"
 	,"description": "The module exports orders from Magento 2 to Dropbox"
 	,"type": "magento2-module"
 	,"homepage": "https://github.com/julio-com/order"
@@ -11,7 +11,7 @@
 		,"homepage": "https://mage2.pro/users/dmitry_fedyuk"
 		,"role": "Developer"
 	}]
-	,"require": {"julio.com/core": ">=0.0.1", "mage2pro/core": ">=5.1.9"}
+	,"require": {"julio.com/core": ">=0.0.1", "kunalvarma05/dropbox-php-sdk": ">=0.2.1", "mage2pro/core": ">=5.1.9"}
 	,"autoload": {"files": ["registration.php"], "psr-4": {"Julio\\Order\\": ""}}
 	,"keywords": ["Magento 2"]
 }

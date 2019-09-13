@@ -1,0 +1,81 @@
+<?xml version='1.0'?>
+<config
+	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xsi:noNamespaceSchemaLocation='urn:magento:module:Magento_Config:etc/system_file.xsd'
+>
+	<system>
+		<section id='sales'>
+			<group
+				showInDefault='1'
+				showInStore='0'
+				showInWebsite='0'
+				sortOrder='100'
+				translate='label'
+				type='text'
+                id='orderexport'
+			>
+				<label>Order Export</label>
+				<field
+					canRestore='1'
+					id='queue_active'
+					showInDefault='1'
+					showInStore='0'
+					showInWebsite='0'
+					sortOrder='1'
+					translate='label'
+					type='select'
+				>
+					<label>Queue Active</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field
+					id='dropbox_api_key'
+					showInDefault='1'
+					showInStore='0'
+					showInWebsite='0'
+					sortOrder='30'
+					translate='label'
+					type='obscure'
+				>
+					<label>Dropbox API Key</label>
+					<backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+				</field>
+				<field
+					id='dropbox_api_secret'
+					showInDefault='1'
+					showInStore='0'
+					showInWebsite='0'
+					sortOrder='30'
+					translate='label'
+					type='obscure'
+				>
+					<label>Dropbox API Secret</label>
+					<backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+				</field>
+				<field
+					id='dropbox_access_token'
+					showInDefault='1'
+					showInStore='0'
+					showInWebsite='0'
+					sortOrder='30'
+					translate='label'
+					type='obscure'
+				>
+					<label>Dropbox Access Token</label>
+					<backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+				</field>
+				<field
+					id='dropbox_dir_path'
+					showInDefault='1'
+					showInStore='0'
+					showInWebsite='0'
+					sortOrder='30'
+					translate='label'
+					type='text'
+				>
+					<label>Dropbox Directory Path</label>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>
