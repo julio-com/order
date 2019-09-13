@@ -89,7 +89,7 @@ class GeneralHelper extends AbstractHelper {
 	 * @return D
 	 */
 	function convertToXml(O $o) {
-		$d = new D('1.0', 'UTF-8'); /** @var D $d */
+		$d = new D('1.0', 'ISO-8859-1'); /** @var D $d */
 		$d->formatOutput = true;
 		$d->preserveWhiteSpace = false;
 		$orderEl = $d->createElement('order');
@@ -139,9 +139,9 @@ class GeneralHelper extends AbstractHelper {
 			$itemEl = $d->createElement('item');
 			$itemsEl->appendChild($itemEl);
 			$this->addXmlChild($d, $itemEl, 'item_id', $i->getId());
-			$this->addXmlChild($d, $itemEl, 'quantity', $i->getQtyOrdered());
+			$this->addXmlChild($d, $itemEl, 'quantity', df_oqi_qty($i));
 			$this->addXmlCDataChild($d, $itemEl, 'label', $i->getName());
-			$this->addXmlChild($d, $itemEl, 'item_price', $i->getBasePrice());
+			$this->addXmlChild($d, $itemEl, 'item_price', df_oqi_price($i));
 			$this->addXmlChild($d, $itemEl, 'carrier', '');
 			$this->addXmlChild($d, $itemEl, 'tracking_code', '');
 			$this->addXmlChild($d, $itemEl, 'status', $o->getStatus());
