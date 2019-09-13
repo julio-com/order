@@ -27,7 +27,7 @@
 				</item>
 			</argument>
 			<argument name='columns' xsi:type='array'>
-				<item name='export_synced' xsi:type='string'>sales_order_export_queue.synced</item>
+				<item name='julio_export_synced' xsi:type='string'>sales_order_export_queue.synced</item>
 			</argument>
 		</arguments>
 	</virtualType>

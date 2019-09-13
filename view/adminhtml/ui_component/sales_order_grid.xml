@@ -4,7 +4,7 @@
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
 >
 	<columns name='sales_order_columns'>
-		<column component='Magento_Ui/js/grid/columns/select' name='export_synced'>
+		<column component='Magento_Ui/js/grid/columns/select' name='julio_export_synced'>
 			<settings>
 				<filter>select</filter>
 				<options class='Julio\Order\Ui\Component\Source\Options\Export'/>

@@ -33,7 +33,7 @@ class InstallSchema implements InstallSchemaInterface {
 			Table::ACTION_CASCADE
 		)->setComment('Sales Order Export Queue');
 		$connection->createTable($t);
-		$connection->addColumn($setup->getTable('sales_order_grid'), 'export_synced', [
+		$connection->addColumn($setup->getTable('sales_order_grid'), 'julio_export_synced', [
 			'comment' => 'Export Synced'
 			,'default' => 0
 			,'length' => 2
