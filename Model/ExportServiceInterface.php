@@ -7,18 +7,18 @@ interface ExportServiceInterface {
 	 * @param int $orderId
 	 * @return Export
 	 */
-	public function initByOrderId(int $orderId) : Export;
+	function initByOrderId(int $orderId) : Export;
 
 	/**
 	 * Saves Export Item
 	 * @param Export $orderExport
 	 * @return void
 	 */
-	public function save(Export $orderExport);
+	function save(Export $orderExport);
 
 	/**
 	 * Clean old
 	 * @return void
 	 */
-	public function cleanOld();
+	function cleanOld();
 }

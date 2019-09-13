@@ -17,7 +17,7 @@ class ExportService implements ExportServiceInterface {
 	 * @param ExportFactory $exportFactory
 	 * @param ResourceModel\Export $exportResource
 	 */
-	public function __construct(ExportFactory $exportFactory, ExportResource $exportResource)
+	function __construct(ExportFactory $exportFactory, ExportResource $exportResource)
 	{
 		$this->exportFactory = $exportFactory;
 		$this->exportResource = $exportResource;
@@ -28,7 +28,7 @@ class ExportService implements ExportServiceInterface {
 	 * @param int $orderId
 	 * @return Export
 	 */
-	public function initByOrderId(int $orderId): Export
+	function initByOrderId(int $orderId): Export
 	{
 		/** @var Export $orderExport */
 		$orderExport = $this->exportFactory->create();
@@ -47,7 +47,7 @@ class ExportService implements ExportServiceInterface {
 	 * @return void
 	 * @throws \Magento\Framework\Exception\AlreadyExistsException
 	 */
-	public function save(Export $orderExport)
+	function save(Export $orderExport)
 	{
 		$this->exportResource->save($orderExport);
 	}
@@ -56,7 +56,7 @@ class ExportService implements ExportServiceInterface {
 	 * Clean old
 	 * @return void
 	 */
-	public function cleanOld()
+	function cleanOld()
 	{
 
 	}

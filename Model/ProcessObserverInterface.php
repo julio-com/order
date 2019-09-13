@@ -6,5 +6,5 @@ interface ProcessObserverInterface {
 	 * @param string $message
 	 * @return mixed
 	 */
-	public function notify(string $message);
+	function notify(string $message);
 }

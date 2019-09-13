@@ -35,7 +35,7 @@ class Dropbox implements ApiInterface {
 	 * @param WriteFactory $writeFactory
 	 * @param DirectoryList $directoryList
 	 */
-	public function __construct(
+	function __construct(
 		GeneralHelper $generalHelper,
 		WriteFactory $writeFactory,
 		DirectoryList $directoryList
@@ -69,7 +69,7 @@ class Dropbox implements ApiInterface {
 	 * @return mixed
 	 * @throws \Magento\Framework\Exception\FileSystemException
 	 */
-	public function push(Order $order, \DOMDocument $xml)
+	function push(Order $order, \DOMDocument $xml)
 	{
 		$xml = $xml->saveXML();
 		$varDir = $this->writeFactory->create(DirectoryList::VAR_DIR);

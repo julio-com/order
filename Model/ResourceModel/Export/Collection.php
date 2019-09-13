@@ -15,7 +15,7 @@ class Collection extends AbstractCollection {
 	/**
 	 * Set collection acting as Queue
 	 */
-	public function actAsQueue()
+	function actAsQueue()
 	{
 		$this->setOrder('queued_at', \Magento\Framework\Data\Collection::SORT_ORDER_ASC);
 		$this->addFieldToFilter('synced', 0);

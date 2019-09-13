@@ -62,7 +62,7 @@ class QueueProcessor {
 	 * QueueProcessor constructor.
 	 * @param CollectionFactory $collectionFactory
 	 */
-	public function __construct(
+	function __construct(
 		CollectionFactory $collectionFactory,
 		LoggerInterface $logger,
 		ApiInterface $api,
@@ -83,7 +83,7 @@ class QueueProcessor {
 	 * @param $interval
 	 * @return QueueProcessor
 	 */
-	public function setTimeInterval($interval)
+	function setTimeInterval($interval)
 	{
 		$this->timeInterval = $interval;
 
@@ -94,7 +94,7 @@ class QueueProcessor {
 	 * Time interval
 	 * @return int
 	 */
-	public function getTimeInterval()
+	function getTimeInterval()
 	{
 		return $this->timeInterval;
 	}
@@ -107,7 +107,7 @@ class QueueProcessor {
 	 * @return void|boolean
 	 * @throws \Magento\Framework\Exception\AlreadyExistsException
 	 */
-	public function process(ProcessObserverInterface $observer)
+	function process(ProcessObserverInterface $observer)
 	{
 		/** @var Collection $queue */
 		$queue = $this->collectionFactory

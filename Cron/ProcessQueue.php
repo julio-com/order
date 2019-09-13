@@ -19,7 +19,7 @@ class ProcessQueue implements ProcessObserverInterface {
 	 * @param QueueProcessor $queueProcessor
 	 * @param GeneralHelper $generalHelper
 	 */
-	public function __construct(QueueProcessor $queueProcessor, GeneralHelper $generalHelper)
+	function __construct(QueueProcessor $queueProcessor, GeneralHelper $generalHelper)
 	{
 		$this->queueProcessor = $queueProcessor;
 		$this->generalHelper = $generalHelper;
@@ -28,7 +28,7 @@ class ProcessQueue implements ProcessObserverInterface {
 	/**
 	 * Execute
 	 */
-	public function execute()
+	function execute()
 	{
 		if (!$this->generalHelper->isQueueActive()) {
 			return false;
@@ -44,7 +44,7 @@ class ProcessQueue implements ProcessObserverInterface {
 	 * @param string $message
 	 * @return mixed
 	 */
-	public function notify(string $message)
+	function notify(string $message)
 	{
 		// do nothing;
 	}

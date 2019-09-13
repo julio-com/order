@@ -26,7 +26,7 @@ class Export extends \Magento\Framework\Model\AbstractModel {
 	 * @param \Magento\Framework\Data\Collection\AbstractDb|null $resourceCollection
 	 * @param array $data
 	 */
-	public function __construct(
+	function __construct(
 		\Magento\Framework\Model\Context $context,
 		\Magento\Framework\Registry $registry,
 		OrderRepositoryInterface $orderRepository,
@@ -43,7 +43,7 @@ class Export extends \Magento\Framework\Model\AbstractModel {
 	/**
 	 * Export
 	 */
-	public function _construct()
+	function _construct()
 	{
 		$this->_init(\Julio\Order\Model\ResourceModel\Export::class);
 	}
@@ -52,7 +52,7 @@ class Export extends \Magento\Framework\Model\AbstractModel {
 	 * Is Synced?
 	 * @return bool
 	 */
-	public function isSynced()
+	function isSynced()
 	{
 		return (bool)(int)$this->_getData('is_synced');
 	}
@@ -60,7 +60,7 @@ class Export extends \Magento\Framework\Model\AbstractModel {
 	/**
 	 * return \Magento\Sales\Model\Order
 	 */
-	public function getOrder()
+	function getOrder()
 	{
 		if (!isset($this->order)) {
 			$this->order = $this->orderRepository->get($this->getOrderId());
@@ -73,7 +73,7 @@ class Export extends \Magento\Framework\Model\AbstractModel {
 	 * Exports XML from
 	 * @return \DOMDocument
 	 */
-	public function asXml()
+	function asXml()
 	{
 		return $this->generalHelper->convertToXml($this->getOrder());
 	}

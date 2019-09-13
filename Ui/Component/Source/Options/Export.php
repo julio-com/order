@@ -5,7 +5,7 @@ class Export implements OptionSourceInterface {
 	/**
 	 * {@inheritdoc}
 	 */
-	public function toOptionArray()
+	function toOptionArray()
 	{
 		return [
 			[

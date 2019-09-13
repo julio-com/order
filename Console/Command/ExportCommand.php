@@ -35,7 +35,7 @@ class ExportCommand extends Command implements ProcessObserverInterface {
 	 * @param GeneralHelper $generalHelper
 	 * @param null $name
 	 */
-	public function __construct(
+	function __construct(
 		State $appState,
 		QueueProcessor $queueProcessor,
 		GeneralHelper $generalHelper,
@@ -77,7 +77,7 @@ class ExportCommand extends Command implements ProcessObserverInterface {
 	 * @param string $message
 	 * @return mixed
 	 */
-	public function notify(string $message)
+	function notify(string $message)
 	{
 		$this->output->writeln($message);
 	}

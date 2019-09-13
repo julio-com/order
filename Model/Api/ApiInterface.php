@@ -4,5 +4,5 @@ interface ApiInterface {
 	/**
 	 * @return mixed
 	 */
-	public function push(\Magento\Sales\Model\Order $order, \DOMDocument $xml);
+	function push(\Magento\Sales\Model\Order $order, \DOMDocument $xml);
 }

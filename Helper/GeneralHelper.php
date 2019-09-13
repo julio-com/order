@@ -23,7 +23,7 @@ class GeneralHelper extends AbstractHelper {
 	 * @param Context $context
 	 * @param StoreManagerInterface $storeManager
 	 */
-	public function __construct(Context $context, StoreManagerInterface $storeManager, EncryptorInterface $encryptor)
+	function __construct(Context $context, StoreManagerInterface $storeManager, EncryptorInterface $encryptor)
 	{
 		parent::__construct($context);
 		$this->storeManager = $storeManager;
@@ -34,7 +34,7 @@ class GeneralHelper extends AbstractHelper {
 	 * Check if queue is active
 	 * @return bool
 	 */
-	public function isQueueActive()
+	function isQueueActive()
 	{
 		return $this->scopeConfig->isSetFlag(sprintf(self::PATH, 'queue_active'));
 	}
@@ -44,7 +44,7 @@ class GeneralHelper extends AbstractHelper {
 	 * @param $key
 	 * @return string
 	 */
-	public function getConfigDecrypted($key)
+	function getConfigDecrypted($key)
 	{
 		$value = $this->scopeConfig->getValue(sprintf(self::PATH, $key));
 		if (empty($value)) {
@@ -58,7 +58,7 @@ class GeneralHelper extends AbstractHelper {
 	 * Check if grid active
 	 * @return boolean
 	 */
-	public function isAsyncGridActive()
+	function isAsyncGridActive()
 	{
 		return $this->scopeConfig->isSetFlag('dev/grid/async_indexing');
 	}
@@ -67,7 +67,7 @@ class GeneralHelper extends AbstractHelper {
 	 * Upload directory path
 	 * @return string
 	 */
-	public function getUploadDirPath()
+	function getUploadDirPath()
 	{
 		$path = $this->scopeConfig->getValue(sprintf(self::PATH, 'dropbox_dir_path'));
 		$path = trim($path);
@@ -84,7 +84,7 @@ class GeneralHelper extends AbstractHelper {
 	 * Xml representation of order
 	 * @param \Magento\Sales\Model\Order $order
 	 */
-	public function convertToXml(\Magento\Sales\Model\Order $order)
+	function convertToXml(\Magento\Sales\Model\Order $order)
 	{
 		$xml = new \DOMDocument('1.0', 'UTF-8');
 		$xml->formatOutput = true;

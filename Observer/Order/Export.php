@@ -20,7 +20,7 @@ class Export implements ObserverInterface {
 	 * @param ExportService $exportService
 	 * @param LoggerInterface $logger
 	 */
-	public function __construct(ExportService $exportService, LoggerInterface $logger)
+	function __construct(ExportService $exportService, LoggerInterface $logger)
 	{
 		$this->exportService = $exportService;
 		$this->logger = $logger;
@@ -31,7 +31,7 @@ class Export implements ObserverInterface {
 	 * @param Observer $observer
 	 * @return void
 	 */
-	public function execute(Observer $observer)
+	function execute(Observer $observer)
 	{
 		try {
 			$orderId = $observer->getData('order')->getId();
