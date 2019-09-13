@@ -33,16 +33,13 @@ class InstallSchema implements InstallSchemaInterface {
 			Table::ACTION_CASCADE
 		)->setComment('Sales Order Export Queue');
 		$connection->createTable($t);
-		$connection->addColumn(
-			$setup->getTable('sales_order_grid'),
-			'export_synced', [
-				'type' => Table::TYPE_SMALLINT,
-				'length' => 2,
-				'comment' => 'Export Synced',
-				'default' => 0,
-				'nullable' => false
-			]
-		);
+		$connection->addColumn($setup->getTable('sales_order_grid'), 'export_synced', [
+			'comment' => 'Export Synced'
+			,'default' => 0
+			,'length' => 2
+			,'nullable' => false,
+			'type' => Table::TYPE_SMALLINT
+		]);
 		$setup->endSetup();
 	}
 }
