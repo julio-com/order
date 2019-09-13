@@ -50,11 +50,7 @@ class ExportCommand extends Command implements ProcessObserverInterface {
 	/**
 	 * {@inheritdoc}
 	 */
-	protected function configure()
-	{
-		$this->setName('sales:order:export')
-			->setDescription('Sales Order Export');
-	}
+	protected function configure() {$this->setName('sales:order:export')->setDescription('Sales Order Export');}
 
 	/**
 	 * Execute
@@ -63,8 +59,7 @@ class ExportCommand extends Command implements ProcessObserverInterface {
 	 * @return null
 	 * @throws \Magento\Framework\Exception\LocalizedException
 	 */
-	protected function execute(InputInterface $input, OutputInterface $output)
-	{
+	protected function execute(InputInterface $input, OutputInterface $output) {
 		$this->output = $output;
 		$this->appState->setAreaCode(\Magento\Framework\App\Area::AREA_GLOBAL);
 		$this->queueProcessor
@@ -77,8 +72,5 @@ class ExportCommand extends Command implements ProcessObserverInterface {
 	 * @param string $message
 	 * @return mixed
 	 */
-	function notify(string $message)
-	{
-		$this->output->writeln($message);
-	}
+	function notify(string $message) {$this->output->writeln($message);}
 }
