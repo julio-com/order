@@ -4,7 +4,7 @@
 	xsi:noNamespaceSchemaLocation='urn:magento:module:Magento_Config:etc/system_file.xsd'
 >
 	<system>
-		<section id='sales'>
+		<section id='julio_intelisis'>
 			<group
 				showInDefault='1'
 				showInStore='0'
@@ -12,9 +12,9 @@
 				sortOrder='100'
 				translate='label'
 				type='text'
-                id='orderexport'
+                id='order'
 			>
-				<label>Order Export</label>
+				<label>Orders Export</label>
 				<field
 					canRestore='1'
 					id='queue_active'

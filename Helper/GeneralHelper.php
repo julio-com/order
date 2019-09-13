@@ -6,7 +6,7 @@ use Magento\Framework\Encryption\EncryptorInterface;
 use Magento\Sales\Model\Order\Item;
 use Magento\Store\Model\StoreManagerInterface;
 class GeneralHelper extends AbstractHelper {
-	const PATH = 'sales/orderexport/%s';
+	const PATH = 'julio_intelisis/order/%s';
 
 	/**
 	 * @var StoreManagerInterface
