@@ -4,7 +4,7 @@ use Julio\Order\Helper\GeneralHelper;
 use Kunnu\Dropbox as DropboxLib;
 use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Framework\Filesystem\Directory\WriteFactory;
-use Magento\Sales\Model\Order;
+use Magento\Sales\Model\Order as O;
 class Dropbox {
 	const EXPORT_DIR = '/tmp/xml_export';
 
@@ -64,32 +64,26 @@ class Dropbox {
 	}
 
 	/**
-	 * @param Order $order
+	 * @param O $o
 	 * @param \DOMDocument $xml
 	 * @return mixed
 	 * @throws \Magento\Framework\Exception\FileSystemException
 	 */
-	function push(Order $order, \DOMDocument $xml)
-	{
+	function push(O $o, \DOMDocument $xml) {
 		$xml = $xml->saveXML();
 		$varDir = $this->writeFactory->create(DirectoryList::VAR_DIR);
-
 		if (!$varDir->isDirectory(self::EXPORT_DIR)) {
 			$varDir->create(self::EXPORT_DIR);
 		}
-
 		$exportDir = $this->writeFactory->create(DirectoryList::VAR_DIR . self::EXPORT_DIR);
-		$fileName = sprintf('%s.xml', $order->getIncrementId());
+		$fileName = sprintf("ORDER_%s_{$o->getIncrementId()}.xml", df_date()->toString('ddMMy'));
 		$tmpName = md5(microtime(true) . $fileName) . '.xml';
 		$exportDir->writeFile($tmpName, $xml);
-
 		$dbFile = $this->getApi()->upload(
 			$this->directoryList->getRoot() . '/'. $exportDir->getAbsolutePath($tmpName),
 			$this->generalHelper->getUploadDirPath() . $fileName
 		);
-
 		$exportDir->delete($tmpName);
-
 		return $dbFile;
 	}
 }

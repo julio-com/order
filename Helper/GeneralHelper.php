@@ -134,7 +134,7 @@ class GeneralHelper extends AbstractHelper {
 		$this->addXmlChild($d, $eSA, 'country', $shipping->getCountryId());
 		$this->addXmlChild($d, $eSA, 'phone', $shipping->getTelephone());
 		$itemsEl = $d->createElement('items');
-		$d->appendChild($itemsEl);
+		$orderEl->appendChild($itemsEl);
 		foreach ($o->getAllVisibleItems() as $i) {/** @var OI $i */
 			$itemEl = $d->createElement('item');
 			$itemsEl->appendChild($itemEl);
