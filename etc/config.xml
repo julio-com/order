@@ -2,7 +2,7 @@
 	<default>
 		<sales>
 			<orderexport>
-				<queue_active>0</queue_active>
+				<enable>0</enable>
 				<dropbox_dir_path>Pedidos</dropbox_dir_path>
 			</orderexport>
 		</sales>

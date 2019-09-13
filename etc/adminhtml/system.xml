@@ -17,7 +17,7 @@
 				<label>Orders Export</label>
 				<field
 					canRestore='1'
-					id='queue_active'
+					id='enable'
 					showInDefault='1'
 					showInStore='0'
 					showInWebsite='0'
@@ -25,7 +25,7 @@
 					translate='label'
 					type='select'
 				>
-					<label>Queue Active</label>
+					<label>Enable?</label>
 					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
 				</field>
 				<field

@@ -37,10 +37,7 @@ class GeneralHelper extends AbstractHelper {
 	 * Check if queue is active
 	 * @return bool
 	 */
-	function isQueueActive()
-	{
-		return $this->scopeConfig->isSetFlag(sprintf(self::PATH, 'queue_active'));
-	}
+	function enable() {return $this->scopeConfig->isSetFlag(sprintf(self::PATH, 'enable'));}
 
 	/**
 	 * Decrypted config value
