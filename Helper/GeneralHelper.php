@@ -106,13 +106,13 @@ class GeneralHelper extends AbstractHelper {
 		$eBA = $d->createElement('invoice_address'); /** @var DE $eBA */
 		$orderEl->appendChild($eBA);
 		$this->addXmlChild($d, $eBA, 'address_id', $billing->getId());
-		$this->addXmlCDataChild($d, $eBA, 'firstname', $billing->getFirstname());
-		$this->addXmlCDataChild($d, $eBA, 'lastname', $billing->getLastname());
+		$this->addXmlChild($d, $eBA, 'firstname', $billing->getFirstname());
+		$this->addXmlChild($d, $eBA, 'lastname', $billing->getLastname());
 		$this->addXmlChild($d, $eBA, 'neighbourhood', '');
-		$this->addXmlCDataChild($d, $eBA, 'street', $billing->getStreetLine(1));
-		$this->addXmlCDataChild($d, $eBA, 'street_no', $billing->getStreetLine(2));
+		$this->addXmlChild($d, $eBA, 'street', $billing->getStreetLine(1));
+		$this->addXmlChild($d, $eBA, 'street_no', $billing->getStreetLine(2));
 		$this->addXmlChild($d, $eBA, 'zip', $billing->getPostcode());
-		$this->addXmlCDataChild($d, $eBA, 'city', $billing->getCity());
+		$this->addXmlChild($d, $eBA, 'city', $billing->getCity());
 		$this->addXmlChild($d, $eBA, 'country', $billing->getCountryId());
 		$this->addXmlChild($d, $eBA, 'email', $o->getCustomerEmail());
 		$this->addXmlChild($d, $eBA, 'phone', $billing->getTelephone());
@@ -121,13 +121,13 @@ class GeneralHelper extends AbstractHelper {
 		$eSA = $d->createElement('shipping_address');/** @var DE $eSA */
 		$orderEl->appendChild($eSA);
 		$this->addXmlChild($d, $eSA, 'address_id', $shipping->getId());
-		$this->addXmlCDataChild($d, $eSA, 'firstname', $shipping->getFirstname());
-		$this->addXmlCDataChild($d, $eSA, 'lastname', $shipping->getLastname());
+		$this->addXmlChild($d, $eSA, 'firstname', $shipping->getFirstname());
+		$this->addXmlChild($d, $eSA, 'lastname', $shipping->getLastname());
 		$this->addXmlChild($d, $eSA, 'neighbourhood', '');
-		$this->addXmlCDataChild($d, $eSA, 'street', $shipping->getStreetLine(1));
-		$this->addXmlCDataChild($d, $eSA, 'street_no', $shipping->getStreetLine(2));
+		$this->addXmlChild($d, $eSA, 'street', $shipping->getStreetLine(1));
+		$this->addXmlChild($d, $eSA, 'street_no', $shipping->getStreetLine(2));
 		$this->addXmlChild($d, $eSA, 'zip', $shipping->getPostcode());
-		$this->addXmlCDataChild($d, $eSA, 'city', $shipping->getCity());
+		$this->addXmlChild($d, $eSA, 'city', $shipping->getCity());
 		$this->addXmlChild($d, $eSA, 'country', $shipping->getCountryId());
 		$this->addXmlChild($d, $eSA, 'phone', $shipping->getTelephone());
 		$itemsEl = $d->createElement('items');
@@ -137,7 +137,7 @@ class GeneralHelper extends AbstractHelper {
 			$itemsEl->appendChild($itemEl);
 			$this->addXmlChild($d, $itemEl, 'item_id', $i->getId());
 			$this->addXmlChild($d, $itemEl, 'quantity', df_oqi_qty($i));
-			$this->addXmlCDataChild($d, $itemEl, 'label', $i->getName());
+			$this->addXmlChild($d, $itemEl, 'label', $i->getName());
 			$this->addXmlChild($d, $itemEl, 'item_price', df_oqi_price($i));
 			$this->addXmlChild($d, $itemEl, 'carrier', '');
 			$this->addXmlChild($d, $itemEl, 'tracking_code', '');

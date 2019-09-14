@@ -1,6 +1,6 @@
 {
 	"name": "julio.com/order"
-	,"version": "0.0.4"
+	,"version": "0.0.5"
 	,"description": "The module exports orders from Magento 2 to Dropbox"
 	,"type": "magento2-module"
 	,"homepage": "https://github.com/julio-com/order"
