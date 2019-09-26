@@ -7,6 +7,7 @@ rm -rf composer.lock
 composer clear-cache
 composer require julio.com/order:*
 bin/magento setup:upgrade
+bin/magento cache:enable
 rm -rf var/di var/generation generated/code
 bin/magento setup:di:compile
 rm -rf pub/static/*
@@ -19,7 +20,6 @@ bin/magento setup:static-content:deploy \
 	--theme Mgs/claue \
 	-f en_US es_MX
 bin/magento maintenance:disable
-bin/magento cache:enable
 ```
 
 ## How to upgrade
@@ -30,6 +30,7 @@ rm -rf composer.lock
 composer clear-cache
 composer require julio.com/order:*
 bin/magento setup:upgrade
+bin/magento cache:enable
 rm -rf var/di var/generation generated/code
 bin/magento setup:di:compile
 rm -rf pub/static/*
@@ -42,7 +43,6 @@ bin/magento setup:static-content:deploy \
 	--theme Mgs/claue \
 	-f en_US es_MX
 bin/magento maintenance:disable
-bin/magento cache:enable
 ```
 
 If you have problems with these commands, please check the [detailed instruction](https://mage2.pro/t/263).
