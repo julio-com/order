@@ -101,7 +101,8 @@ class GeneralHelper extends AbstractHelper {
 		$this->addXmlChild($d, $eData, 'payment_method', $o->getPayment()->getMethod());
 		$this->addXmlChild($d, $eData, 'seller_shipping_cost', '0');
 		$this->addXmlChild($d, $eData, 'reference', $o->getIncrementId());
-		$this->addXmlChild($d, $eData, 'client_id', $o->getCustomerId() ?: '');
+		// 2019-09-26 "`client_id` should always have a value": https://github.com/julio-com/order/issues/2
+		$this->addXmlChild($d, $eData, 'client_id', $o->getCustomerId() ?: $o->getCustomerEmail());
 		$billing = $o->getBillingAddress();
 		$eBA = $d->createElement('invoice_address'); /** @var DE $eBA */
 		$orderEl->appendChild($eBA);
@@ -135,7 +136,10 @@ class GeneralHelper extends AbstractHelper {
 		foreach ($o->getAllVisibleItems() as $i) {/** @var OI $i */
 			$itemEl = $d->createElement('item');
 			$itemsEl->appendChild($itemEl);
-			$this->addXmlChild($d, $itemEl, 'item_id', $i->getId());
+			// 2019-09-26
+			// "`item_id` should be filled with the product's SKU":
+			// https://github.com/julio-com/order/issues/3
+			$this->addXmlChild($d, $itemEl, 'item_id', $i->getSku());
 			$this->addXmlChild($d, $itemEl, 'quantity', df_oqi_qty($i));
 			$this->addXmlChild($d, $itemEl, 'label', $i->getName());
 			$this->addXmlChild($d, $itemEl, 'item_price', df_oqi_price($i));
