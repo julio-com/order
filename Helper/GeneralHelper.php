@@ -99,7 +99,9 @@ class GeneralHelper extends AbstractHelper {
 		$this->addXmlChild($d, $eData, 'total_item_amount', $o->getBaseSubtotal());
 		$this->addXmlChild($d, $eData, 'channel', $this->storeManager->getStore($o->getStoreId())->getName());
 		$this->addXmlChild($d, $eData, 'payment_method', $o->getPayment()->getMethod());
-		$this->addXmlChild($d, $eData, 'seller_shipping_cost', '0');
+		// 2019-10-09 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+		// https://github.com/julio-com/order/issues/4
+		$this->addXmlChild($d, $eData, 'seller_shipping_cost', $o->getShippingAmount());
 		$this->addXmlChild($d, $eData, 'reference', $o->getIncrementId());
 		// 2019-09-26 "`client_id` should always have a value": https://github.com/julio-com/order/issues/2
 		$this->addXmlChild($d, $eData, 'client_id', $o->getCustomerId() ?: $o->getCustomerEmail());
