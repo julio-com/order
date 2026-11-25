@@ -99,7 +99,7 @@ class GeneralHelper extends AbstractHelper {
 		$this->addXmlChild($d, $eData, 'total_item_amount', $o->getBaseSubtotal());
 		$this->addXmlChild($d, $eData, 'channel', $this->storeManager->getStore($o->getStoreId())->getName());
 		$this->addXmlChild($d, $eData, 'payment_method', $o->getPayment()->getMethod());
-		// 2019-10-09 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+		// 2019-10-09 Dmitry Fedyuk https://github.com/dmitrii-fediuk
 		// https://github.com/julio-com/order/issues/4
 		$this->addXmlChild($d, $eData, 'seller_shipping_cost', $o->getShippingAmount());
 		$this->addXmlChild($d, $eData, 'reference', $o->getIncrementId());
